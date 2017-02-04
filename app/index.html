@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html ng-app="m2agro">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title page-title>m2agro - API Tester</title>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+      <link href="bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/styles/styles.css" rel="stylesheet">
+  </head>
+  <body ng-controller="MainCtrl as main">
+
+    <!-- Main view  -->
+    <div ng-include="'views/common/topnavbar.html'"></div>
+
+    <div class="container" ui-view></div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+    <script src="base-settings/base_settings.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/resource.js"></script>
+    <script src="scripts/controllers.js"></script>
+
+  </body>
+
+</html>

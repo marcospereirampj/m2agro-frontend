@@ -1,0 +1,52 @@
+<div class="container" ng-controller="ServiceCtrl as service_ctrl">
+    <div class="col-sm-12">
+          <div class="row">
+            <div class="text-center col-sm-12">
+                <h2>
+                    Lista de Serviços
+                </h2>
+                <hr>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:20px;">
+            <div class="col-sm-12">
+                <button class="btn btn-primary pull-right">
+                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                    Novo Serviço
+                </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>NOME</th>
+                      <th>SAFRA</th>
+                      <th>VALOR</th>
+                      <th>DATA INÍCIO</th>
+                      <th>DATA FINAL</th>
+                      <th>AÇÕES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="service in service_ctrl.services">
+                    <td>{{ service.id }}</td>
+                    <td>{{ service.name }}</td>
+                    <td>{{ service.harvest.name }}</td>
+                    <td>{{ service.cost }}</td>
+                    <td>{{ service.start_date }}</td>
+                    <td>{{ service.end_date }}</td>
+                    <td class="">
+                      <a class="btn btn-default btn-xs pull-right">
+                          <i class="glyphicon glyphicon-edit"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>

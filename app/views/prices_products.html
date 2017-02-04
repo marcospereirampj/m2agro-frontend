@@ -1,0 +1,32 @@
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="MemberCtrl as member_ctrl">
+    <div class="col-sm-12">
+          <div class="row">
+            <div class="text-center col-sm-12">
+                <h2>
+                    Lista de Membros
+                </h2>
+                <hr>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:20px;">
+            <div class="col-sm-12" ng-controller="ModalCtrl as modal">
+                <button class="btn btn-primary" ng-click="modal.showForm()">
+                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                    New Member
+                </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-md-3" ng-repeat="member in member_ctrl.members">
+              <div class="thumbnail">
+                <div class="caption text-center">
+                  <h3>{{ member.name }}</h3>
+                  <p>
+                     <a href="#" class="btn btn-primary" role="button">Edit</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

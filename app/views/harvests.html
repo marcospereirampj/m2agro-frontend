@@ -1,0 +1,48 @@
+<div class="container" ng-controller="HarvestCtrl as harvest_ctrl">
+    <div class="col-sm-12">
+          <div class="row">
+            <div class="text-center col-sm-12">
+                <h2>
+                    Lista de Safras
+                </h2>
+                <hr>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:20px;">
+            <div class="col-sm-12">
+                <button class="btn btn-primary pull-right">
+                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                    Nova Safra
+                </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>NOME</th>
+                      <th>DATA INÍCIO</th>
+                      <th>DATA FINAL</th>
+                      <th>AÇÕES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="harvest in harvest_ctrl.harvests">
+                    <td>{{ harvest.id }}</td>
+                    <td>{{ harvest.name }}</td>
+                    <td>{{ harvest.start_date }}</td>
+                    <td>{{ harvest.end_date }}</td>
+                    <td class="">
+                      <a class="btn btn-default btn-xs pull-right">
+                          <i class="glyphicon glyphicon-edit"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>
