@@ -43,6 +43,11 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl: "views/services.html",
             data: { pageTitle: 'Lista de Serviços' }
         })
+        .state('index.products_services', {
+            url: "/products-services",
+            templateUrl: "views/products_services.html",
+            data: { pageTitle: 'Lista de Produtos Utilizados em Serviços' }
+        })
         .state('index.prices', {
             url: "/prices-products",
             templateUrl: "views/prices_products.html",

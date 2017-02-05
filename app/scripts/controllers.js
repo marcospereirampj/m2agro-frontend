@@ -9,11 +9,12 @@
      .controller('ProductCtrl', ProductCtrl)
      .controller('ServiceCtrl', ServiceCtrl)
      .controller('PriceProductCtrl', PriceProductCtrl)
+     .controller('ProductServiceCtrl', ProductServiceCtrl)
      .controller('UpdatePricesProductsCtrl', UpdatePricesProductsCtrl)
      .controller('HarvestModalCtrl', HarvestModalCtrl)
      .controller('ProductModalCtrl', ProductModalCtrl)
      .controller('ServiceModalCtrl', ServiceModalCtrl)
-
+     .controller('ProductServiceModalCtrl', ProductServiceModalCtrl)
 
 /**
  * MainCtrl - controller
@@ -76,6 +77,20 @@ function PriceProductCtrl(PriceProduct) {
     vm.prices = PriceProduct.list();
 };
 
+
+/**
+ * ProductServiceCtrl - controller
+ */
+function ProductServiceCtrl(ProductService, $scope) {
+    var vm = this;
+
+    vm.products_services = ProductService.list();
+
+    $scope.$on("updateListProductService",function(){
+        vm.products_services = ProductService.list();
+    });
+
+};
 
 /**
  * UpdatePricesProductsCtrl - controller
@@ -213,6 +228,49 @@ function ServiceModalInstanceCtrl($rootScope, $scope, $modalInstance, $location,
         if ($scope.form.serviceForm.$valid) {
             $scope.service.$save();
             $rootScope.$broadcast('updateListService');
+            $modalInstance.close('closed');
+
+        }
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+};
+
+
+/**
+ * ProductServiceModalCtrl - controller
+ */
+function ProductServiceModalCtrl($scope, $modal, $log, ProductService) {
+    var vm = this;
+
+    vm.showForm = function () {
+        var modalInstance = $modal.open({
+            templateUrl: 'views/modals/new_product_service.html',
+            controller: ProductServiceModalInstanceCtrl,
+            scope: $scope,
+                  resolve: {
+                        productServiceForm: function () {
+                            return this.productServiceForm;
+                        }
+                    }
+            });
+    };
+};
+
+
+/**
+ * ProductServiceModalInstanceCtrl - controller
+ */
+function ProductServiceModalInstanceCtrl($rootScope, $scope, $modalInstance, $location, productServiceForm, ProductService) {
+    $scope.form = {}
+    $scope.product_service = new ProductService();
+
+    $scope.submitForm = function () {
+        if ($scope.form.productServiceForm.$valid) {
+            $scope.product_service.$save();
+            $rootScope.$broadcast('updateListProductService');
             $modalInstance.close('closed');
 
         }

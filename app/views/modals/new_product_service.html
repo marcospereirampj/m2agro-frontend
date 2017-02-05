@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h3>Novo Produto Utilizado em Serviço</h3>
+</div>
+<form name="form.productServiceForm" ng-submit="submitForm()" novalidate>
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label>Código Serviço</label>
+            <input type="text" name="harservicevest" class="form-control" ng-model="product_service.service" required>
+            <p ng-show="form.productServiceForm.service.$invalid && !form.productServiceForm.service.$pristine"
+            class="help-block">Entre com um valor válido.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Código Produto</label>
+            <input type="text" name="product" class="form-control" ng-model="product_service.product" required>
+            <p ng-show="form.productServiceForm.product.$invalid && !form.productServiceForm.product.$pristine"
+            class="help-block">Entre com um valor válido.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Quantidade</label>
+            <input type="text" name="cost" class="form-control" ng-model="product_service.amount" required>
+            <p ng-show="form.productServiceForm.amount.$invalid && !form.productServiceForm.amount.$pristine"
+            class="help-block">Entre com valor válido.</p>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-disabled="form.productServiceForm.$invalid">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>
