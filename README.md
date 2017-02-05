@@ -22,6 +22,7 @@ levado em consideração os valores dos serviços e as quantidades utilizadas de
 
 * Foi adicionado o campo **ponderador (weigh_price)** ao produto. Esse campo visa
  ponderar o valor do produto em relação aos demais.
+* Foi adicionado um histórico de preços (PriceProduct). Ao adicionar um novo PriceProduct o valor do produto é atualizado automáticamente.
 
 ## Instalação ##
 
