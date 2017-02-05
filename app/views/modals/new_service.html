@@ -1,0 +1,47 @@
+<div class="modal-header">
+    <h3>Novo Serviço</h3>
+</div>
+<form name="form.serviceForm" ng-submit="submitForm()" novalidate>
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" name="name" class="form-control" ng-model="service.name" required>
+            <p ng-show="form.serviceForm.name.$invalid && !form.serviceForm.name.$pristine"
+            class="help-block">Entre com um nome.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Código Safra</label>
+            <input type="text" name="harvest" class="form-control" ng-model="service.harvest" required>
+            <p ng-show="form.serviceForm.harvest_id.$invalid && !form.serviceForm.harvest_id.$pristine"
+            class="help-block">Entre com valor válido.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Data de Início</label>
+            <input type="text" name="start_date" class="form-control" ng-model="service.start_date" required>
+            <p ng-show="form.serviceForm.start_date.$invalid && !form.serviceForm.start_date.$pristine"
+            class="help-block">Entre com uma data válida.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Data de Término</label>
+            <input type="text" name="end_date" class="form-control" ng-model="service.end_date" required>
+            <p ng-show="form.serviceForm.end_date.$invalid && !form.serviceForm.end_date.$pristine"
+              class="help-block">Entre com uma data válida.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Valor</label>
+            <input type="text" name="cost" class="form-control" ng-model="service.cost" required>
+            <p ng-show="form.serviceForm.cost.$invalid && !form.serviceForm.cost.$pristine"
+            class="help-block">Entre com valor válido.</p>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-disabled="form.serviceForm.$invalid">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

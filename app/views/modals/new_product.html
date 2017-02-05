@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h3>Novo Produto</h3>
+</div>
+<form name="form.productForm" ng-submit="submitForm()" novalidate>
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" name="name" class="form-control" ng-model="product.name" required>
+            <p ng-show="form.productForm.name.$invalid && !form.productForm.name.$pristine"
+            class="help-block">Entre com um nome.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Preço Médio</label>
+            <input type="text" name="start_date" class="form-control" ng-model="product.last_average_price" required>
+            <p ng-show="form.productForm.last_average_price.$invalid && !form.productForm.last_average_price.$pristine"
+            class="help-block">Entre com valor válido.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Ponderador</label>
+            <input type="text" name="end_date" class="form-control" ng-model="product.weigh_price" required>
+            <p ng-show="form.productForm.eweigh_pricend_date.$invalid && !form.productForm.weigh_price.$pristine"
+              class="help-block">Entre com valor válido.</p>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-disabled="form.productForm.$invalid">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

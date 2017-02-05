@@ -9,8 +9,8 @@
             </div>
           </div>
           <div class="row" style="margin-bottom:20px;">
-            <div class="col-sm-12">
-                <button class="btn btn-primary pull-right">
+            <div class="col-sm-12" ng-controller="HarvestModalCtrl as modal">
+                <button class="btn btn-primary pull-right" ng-click="modal.showForm()">
                     <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                     Nova Safra
                 </button>

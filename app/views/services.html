@@ -9,8 +9,8 @@
             </div>
           </div>
           <div class="row" style="margin-bottom:20px;">
-            <div class="col-sm-12">
-                <button class="btn btn-primary pull-right">
+            <div class="col-sm-12" ng-controller="ServiceModalCtrl as modal">
+                <button class="btn btn-primary pull-right" ng-click="modal.showForm()">
                     <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                     Novo Serviço
                 </button>
@@ -34,7 +34,7 @@
                   <tr ng-repeat="service in service_ctrl.services">
                     <td>{{ service.id }}</td>
                     <td>{{ service.name }}</td>
-                    <td>{{ service.harvest.name }}</td>
+                    <td>{{ service.harvest_name }}</td>
                     <td>{{ service.cost }}</td>
                     <td>{{ service.start_date }}</td>
                     <td>{{ service.end_date }}</td>
