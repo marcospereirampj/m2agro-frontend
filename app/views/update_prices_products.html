@@ -1,0 +1,55 @@
+<div class="container" ng-controller="UpdatePricesProductsCtrl as update_prices_ctrl">
+    <div class="col-sm-12">
+          <div class="row">
+            <div class="text-center col-sm-12">
+                <h2>
+                    Rotina de Atulização de Preços de Produtos
+                </h2>
+                <hr>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:20px;" >
+            <div class="col-sm-12" style="margin-bottom:20px;">
+                <button class="btn btn-danger btn-lg  btn-block pull-right" ng-click="update_prices_ctrl.run_update()">
+                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                    Executar Rotina
+                </button>
+            </div>
+            <div class="text-center col-sm-12" ng-if="update_prices_ctrl.message_return">
+                <div class="alert alert-info" role="alert">
+                    {{ update_prices_ctrl.message_return }}
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-center col-sm-12">
+                <h2>
+                    Lista de Produtos
+                </h2>
+                <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>NOME</th>
+                      <th>VALOR MÉDIO</th>
+                      <th>PONDERADOR</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="product in update_prices_ctrl.products">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.last_average_price }}</td>
+                    <td>{{ product.weigh_price }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>

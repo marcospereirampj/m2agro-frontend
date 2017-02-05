@@ -43,4 +43,14 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl: "views/services.html",
             data: { pageTitle: 'Lista de Serviços' }
         })
+        .state('index.prices', {
+            url: "/prices-products",
+            templateUrl: "views/prices_products.html",
+            data: { pageTitle: 'Histórico de Preços dos Produtos' }
+        })
+        .state('index.update_prices_products', {
+            url: "/update-prices-products",
+            templateUrl: "views/update_prices_products.html",
+            data: { pageTitle: 'Rotina de Atualização de Preços dos Produtos' }
+        })
 }

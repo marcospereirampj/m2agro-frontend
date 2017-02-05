@@ -8,8 +8,8 @@
      .factory('Harvest', Harvest)
      .factory('Product', Product)
      .factory('Service', Service)
-     /* .factory('PriceProduct', PriceProduct)
-     .factory('UpdatePrices', UpdatePrices)*/
+     .factory('PriceProduct', PriceProduct)
+     .factory('UpdatePricesProducts', UpdatePricesProducts)
 
 
 function Harvest($resource, BaseSettings) {
@@ -89,5 +89,46 @@ function Service($resource, BaseSettings) {
    					return data;
    				}
  			}
+ 	  });
+};
+
+function PriceProduct($resource, BaseSettings) {
+ 		var url = BaseSettings.ApiURL + "price-product/";
+
+ 		return $resource(url, { }, {
+      update: {
+  			method: "PUT"
+  		},
+ 			get: {
+   				method: "GET",
+          isArray: false,
+   				transformResponse: function(data, headers){
+   					data = JSON.parse(data);
+   					return data;
+   				}
+ 			},
+      list: {
+   				method: "GET",
+          isArray: true,
+   				transformResponse: function(data, headers){
+   					data = JSON.parse(data);
+   					return data;
+   				}
+ 			}
+ 	  });
+};
+
+function UpdatePricesProducts($resource, BaseSettings) {
+ 		var url = BaseSettings.ApiURL + "update_products/";
+
+ 		return $resource(url, {}, {
+      run: {
+        isArray: true,
+  			method: "POST",
+        transformResponse: function(data, headers){
+          data = JSON.parse(data);
+          return data;
+        }        
+  		}
  	  });
 };

@@ -8,6 +8,8 @@
      .controller('HarvestCtrl', HarvestCtrl)
      .controller('ProductCtrl', ProductCtrl)
      .controller('ServiceCtrl', ServiceCtrl)
+     .controller('PriceProductCtrl', PriceProductCtrl)
+     .controller('UpdatePricesProductsCtrl', UpdatePricesProductsCtrl)
 
 
 /**
@@ -31,7 +33,7 @@ function HarvestCtrl(Harvest) {
 
 
 /**
- * Product - controller
+ * ProductCtrl - controller
  */
 function ProductCtrl(Product) {
     var vm = this;
@@ -40,10 +42,39 @@ function ProductCtrl(Product) {
 };
 
 /**
- * Service - controller
+ * ServiceCtrl - controller
  */
 function ServiceCtrl(Service) {
     var vm = this;
 
     vm.services = Service.list();
+};
+
+/**
+ * PriceProductCtrl - controller
+ */
+function PriceProductCtrl(PriceProduct) {
+    var vm = this;
+
+    vm.prices = PriceProduct.list();
+};
+
+
+/**
+ * UpdatePricesProductsCtrl - controller
+ */
+function UpdatePricesProductsCtrl(UpdatePricesProducts, Product) {
+    var vm = this;
+    vm.message_return = "";
+    vm.products = Product.list();
+
+    vm.run_update = function(memberId){
+      vm.products = UpdatePricesProducts.run(
+        function(data){
+            vm.message_return = "Rotina executada com sucesso";
+        }, function(err){
+            vm.message_return = "Rotina não pode ser executada.";
+        }
+      );
+    }
 };
