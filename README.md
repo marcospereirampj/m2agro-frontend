@@ -40,5 +40,6 @@ levado em consideração os valores dos serviços e as quantidades utilizadas de
 
 ## Demonstração ##
 
-* API Rest: http://m2agro.marcospereirajr.com.br/api/
-* Front-end (AngularJS): http://m2agro.marcospereirajr.com.br/
+* API Rest: http://services.m2agro.marcospereirajr.com.br/api/
+* Admin Django: http://services.m2agro.marcospereirajr.com.br/manager/
+* Front-end (AngularJS): http://apps.m2agro.marcospereirajr.com.br/
